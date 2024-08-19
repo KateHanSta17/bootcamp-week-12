@@ -8,13 +8,7 @@ CREATE TABLE instructors (
   first_name VARCHAR(30),
   last_name VARCHAR(30)
 );
+-- serial replaces data types to inject auto-incrementing values (increments by 1)
+-- primary key is a unique identifier for each row in a table. Will always be unique. Gives that particular row a reference.
+-- use a primary key to reference a row in another table
 
-CREATE TABLE courses (
-  id SERIAL PRIMARY KEY,
-  course_title VARCHAR(30) NOT NULL,
-  instructor_id INTEGER,
-  course_description TEXT,
-  FOREIGN KEY (instructor_id)
-  REFERENCES instructors(id)
-  ON DELETE SET NULL
-);

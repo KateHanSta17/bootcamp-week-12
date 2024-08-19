@@ -22,6 +22,8 @@ CREATE TABLE authors (
 );
 
 -- TODO: Add a transaction block here
+DO $$
+BEGIN; 
 
 INSERT INTO books (book_id, book_name)
 VALUES
@@ -33,3 +35,12 @@ INSERT INTO authors (author_id, author_name)
 VALUES
     (10, 'Jane Austen'),
     (11, 'Harper Lee');
+
+RAISE NOTICE 'Transaction complete';
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RAISE NOTICE 'An error occurred: %', SQLERRM; -- Log the error
+        ROLLBACK; -- Explicitly roll back changes in case of error
+
+END $$;

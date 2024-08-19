@@ -13,7 +13,7 @@ CREATE TABLE course_names (
   name VARCHAR(30) NOT NULL,
   department INTEGER,
   FOREIGN KEY (department)
-  REFERENCES department(id)
+  REFERENCES departments(id)
   ON DELETE SET NULL
 );
 

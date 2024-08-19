@@ -10,3 +10,5 @@ CREATE TABLE courses (
   active BOOLEAN NOT NULL,
   date_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
+-- integer can be positive or negative numbers without decimals
