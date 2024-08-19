@@ -25,11 +25,12 @@ const pool = new Pool(
 
 pool.connect();
 
-
+// Query DB groups the books by their in stock value and counts the number of books in each group
 pool.query('SELECT COUNT(id) AS total_count FROM favorite_books GROUP BY in_stock', function (err, {rows}) {
   console.log(rows);
 });
-
+// Query DB this query is used to select from the table in the database
+// it is adding up the quantity of favorite_books in each section and grouping them by the section column
 pool.query('SELECT SUM(quantity) AS total_in_section, MAX(quantity) AS max_quantity, MIN(quantity) AS min_quantity, AVG(quantity) AS avg_quantity FROM favorite_books GROUP BY section', function (err, {rows}) {
   console.log(rows);
 });

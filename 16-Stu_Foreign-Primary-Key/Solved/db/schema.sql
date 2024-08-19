@@ -17,3 +17,9 @@ CREATE TABLE customer_orders (
   REFERENCES customers(id)
   ON DELETE SET NULL
 );
+
+-- id must always be uniquely distinguishable
+-- email could be used as a primary key because its unique. 
+-- But it's not a good idea because it can change.
+-- line 16 & 18; what field in the current table is going to be the foreign key? customer_id
+-- line 17; what table is the foreign key going to reference and which  field.
