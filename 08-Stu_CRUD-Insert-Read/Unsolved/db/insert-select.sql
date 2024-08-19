@@ -1,4 +1,5 @@
 -- TODO: What is the SQL code below doing?
+--SQL code is inserting data into the biographies table in the books_db database
 INSERT INTO biographies (id, name)
 VALUES
     ( 001, 'Diary of Anne Frank'),
